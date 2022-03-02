@@ -1,0 +1,435 @@
+@import "reset.css";
+
+body {
+  font-family: sans-serif;
+  background-image: url("model.png");
+  background-repeat: no-repeat; /* 배경 반복하지 않는다. */
+  background-position: left top; /* 왼쪽 위에 붙여넣는다. */
+  background-attachment: scroll; /* scroll할 때 움직인다. <-> fixed */
+  background-size: 75% 25%;
+}
+
+header {
+  position: sticky; /* heasder를 스크롤 내려도 고정시키기. */
+  top: 0; /* 상단을 기준으로 얼마나 밑에 위치시킬 것 인가? static인 경우에는 사용 불가능 */
+}
+
+.navbar1 a {
+  text-decoration: none;
+  color: black;
+  margin: 10px;
+}
+
+.navbar1 a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar2 a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  float: left;
+  height: 85px;
+  width: 134px;
+  margin-left: 20px;
+}
+.navbar1 {
+  float: left; /* div 요소를 한 줄에 적고 싶어서 */
+  margin-top: 35px;
+}
+
+.navbar2 {
+  float: right;
+  margin-top: 35px;
+}
+
+.dropDown1,
+.dropDown2,
+.dropDown3,
+.dropDown4 {
+  float: left;
+  padding-right: 0px;
+}
+
+.dropDownBtn1,
+.dropDownBtn2,
+.dropDownBtn3,
+.dropDownBtn4 {
+  padding: 0; /* stackoverflow */
+  border: none;
+  background: none;
+}
+
+.productStory {
+  clear: both; /* 정확한 위치를 설정해주기 위해서, float left와 right 모두 해제하기. */
+}
+
+/* 왼쪽에서 오른쪽으로 이동하는 에니메이션 */
+
+.navbar1 a {
+  position: relative; /* 이 위치를 기준으로 위치를 지정해서 배치하기. absolute 사용하기 위해서는 꼭 필수적이다. */
+}
+
+.navbar1 a:after {
+  /* 요소에 장신용 컨텐츠를 추가하고 싶은 경우에 이용하기. */
+  content: "";
+  position: absolute; /* relative 기준으로 배치하기. */
+  left: 0;
+  bottom: -5px;
+  width: 0px;
+  height: 0.5px;
+  margin: 5px 0 0; /* top > 좌우 > bottom */
+  transition: all 0.3s ease-in-out;
+  opacity: 0; /* 투명하게 만들기. */
+  background-color: black;
+}
+
+.navbar1 a:hover:after {
+  /* a태그에 마우스를 올렸을 때 가상 클래스인 after의 변화 */
+  width: 100%; /* 왜 100%를 안 해주면 안 나타나는지는 잘 모르겠다. */
+  opacity: 1; /* 검은 선이 나타나게 만들어주기. */
+}
+
+.navbar2 label {
+  position: relative;
+}
+
+.navbar2 label:not(.menu4):after {
+  /* 선택자 제외하기 :not() 이용하기 */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0px;
+  height: 0.5px;
+  margin: 5px 0 0;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  background-color: black;
+}
+
+.navbar2 label:not(.menu4):hover:after {
+  /* 선택자 제외하기 :not() 이용하기 */
+  width: 100%;
+  opacity: 1;
+}
+
+/* 왼쪽에서 오른쪽으로 이동하는 에니메이션:끝 */
+
+input#menu1 {
+  display: none;
+}
+
+nav#dropDownCnt1 {
+  display: none;
+}
+
+input#menu1:checked + nav#dropDownCnt1 {
+  display: block;
+}
+
+input#menu2 {
+  display: none;
+}
+
+nav#dropDownCnt2 {
+  display: none;
+}
+
+input#menu2:checked + nav#dropDownCnt2 {
+  display: block;
+}
+
+nav#dropDownCnt2 h3 {
+  font-weight: bold;
+}
+
+input#menu3 {
+  display: none;
+}
+
+nav#dropDownCnt3 {
+  display: none;
+}
+
+input#menu3:checked + nav#dropDownCnt3 {
+  display: block;
+}
+
+input#menu4 {
+  display: none;
+}
+
+nav#dropDownCnt4 {
+  display: none;
+}
+
+input#menu4:checked + nav#dropDownCnt4 {
+  display: block;
+}
+
+label.Btn {
+  padding-right: 25px;
+}
+
+.navbar2 {
+  margin-right: 50px;
+}
+
+.imgExp {
+  /* 한 개로 묶어서 margin 지정해주는 것이 좋다. 세부적인 내용은 밑에 이어서 적기. */
+  float: right;
+  margin: 100px;
+  margin-top: 200px;
+  margin-left: 70%;
+  margin-right: 25px;
+}
+
+.imgExp h3,
+.imgExp h2,
+.imgExp p {
+  padding-bottom: 20px;
+}
+
+.imgExp h3 {
+  font-weight: bold;
+}
+
+.imgExp h2 {
+  font-weight: 500;
+  line-height: 120%; /* 줄 간격 */
+  font-size: 30px;
+}
+
+.imgExp a {
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+
+.imgExp a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.imgExp a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0px;
+  height: 0.5px;
+  margin: 5px 0 0;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  background-color: black;
+}
+
+.imgExp a:hover:after {
+  width: 100%;
+  opacity: 1;
+}
+
+.packing {
+  clear: both;
+}
+
+.productStory {
+  padding: 50px;
+  line-height: 150%;
+  padding-top: 250px; /* 여기서 계속 위치 조정해줘야 된다.. 뭔가 박스 모델 자체를 잘못 짠 느낌이다. */
+  float: left;
+}
+
+.productStory h3 {
+  font-weight: bold;
+  line-height: 200%;
+}
+
+.productStory a {
+  line-height: 300%;
+  text-decoration: none;
+  color: black;
+}
+
+.productStory img {
+  width: 200px;
+  height: 350px;
+  margin-right: 30px;
+}
+
+.productStoryCnt {
+  padding-left: 0px;
+}
+
+.packing img {
+  float: left;
+  padding-left: 0;
+}
+
+.packingCnt {
+  float: right;
+  margin-top: 100px;
+  padding-right: 20px;
+}
+
+.who img {
+  float: left;
+}
+
+.whoCnt {
+  float: right;
+  margin-top: 110px;
+  padding-right: 20px;
+}
+
+.how {
+  float: left;
+}
+
+.howCnt {
+  float: right;
+  margin-top: 110px;
+}
+
+.productStory {
+  display: flex;
+  align-items: center;
+}
+
+.favoriteModel {
+  clear: both;
+  padding: 50px;
+  line-height: 160%;
+}
+
+.favoriteModel h1 {
+  font-weight: 500;
+  font-size: 30px;
+  float: left;
+}
+
+.favoriteModel #sneakersImg {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  /* align-items : center; 한 경우에 이미지 사이즈가 맞지 않음 */
+}
+
+#sneakersImg img {
+  width: 450px;
+  height: 450px;
+  padding: 30px;
+  padding-bottom: 10px;
+}
+
+.favoriteModel h2 {
+  font-weight: 600;
+  color: #328751;
+}
+
+.favoriteModel h3 {
+  font-weight: 600;
+}
+
+.favoriteModel h2,
+.favoriteModel h3,
+.favoriteModel p {
+  padding-left: 30px;
+}
+
+.otherStore {
+  padding: 50px;
+  line-height: 170%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.otherStore img {
+  width: 700px;
+  height: 500px;
+  padding: 30px;
+  padding-bottom: 10px;
+}
+
+.otherStore h3 {
+  font-weight: 600;
+}
+
+.otherStore a {
+  text-decoration: none;
+  color: black;
+}
+
+.otherStore h3,
+.otherStore a {
+  padding-left: 30px;
+}
+
+footer {
+  padding: 50px;
+  line-height: 150%;
+}
+
+.footer2 {
+  margin-left: 25px;
+}
+
+.footer2 > p {
+  margin-left: 10px;
+}
+
+.about,
+.address,
+.contact,
+.info,
+.follow {
+  float: left;
+  padding: 40px;
+}
+
+.footer2 {
+  clear: both;
+}
+
+.footer2 form,
+.icons {
+  float: left;
+}
+
+.etcs > a {
+  text-decoration: none;
+  color: black;
+  font-size: small;
+  font-weight: 500;
+}
+
+.footer1 a,
+.footer1 li a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer1 h3 {
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.footer2 p {
+  clear: both;
+  color: rgba(128, 128, 128, 0.6);
+  font-size: small;
+}
+
+.footer2 p a {
+  text-decoration: none;
+  color: rgba(128, 128, 128, 0.6);
+}
+
+.navbar2 ul {
+  line-height: 150%;
+}
