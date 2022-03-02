@@ -6,5 +6,6 @@
 3. 신발 사진 위에 마우스 올리면 다른 사진 보여지도록 만들어주기.
 4. 일부 a 태그에 애니메이션 효과주기.
 5. background & text 쪽에 애니메이션 효과주기. 
-```블로그에 웹 퍼블리싱 정리한 내용``` : [WIT 3기 동아리 도전하기](https://velog.io/@tino-kim/WIT-3%EA%B8%B0-%EB%8F%99%EC%95%84%EB%A6%AC-%EB%8F%84%EC%A0%84%ED%95%98%EA%B8%B0)
+```블로그에 웹 퍼블리싱 정리한 내용``` : <br>
+[WIT 3기 동아리 도전하기](https://velog.io/@tino-kim/WIT-3%EA%B8%B0-%EB%8F%99%EC%95%84%EB%A6%AC-%EB%8F%84%EC%A0%84%ED%95%98%EA%B8%B0)
 
